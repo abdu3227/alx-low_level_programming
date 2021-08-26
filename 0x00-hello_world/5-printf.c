@@ -1,7 +1,8 @@
 #include <stdio.h>
-/*
- *File 5-printf.c
- *Auth Abdurahman
+/**
+ * main - Prints string
+ * Desciption: Using printf
+ * Return: 0
  */
 int main(void)
 {
