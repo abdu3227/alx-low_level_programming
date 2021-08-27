@@ -1,12 +1,12 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - entery point
  *
  * Return: 1
  */
 int main(void)
 {
-	char *s = "and thar piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 	long l = 59;
 	long fd = 1;
 	long syscall = 1;
