@@ -1,6 +1,7 @@
 #include "main.h"
+
 /**
- * main - entry point
+ * main - prints Holberton
  *
  * Return: 0
  */
