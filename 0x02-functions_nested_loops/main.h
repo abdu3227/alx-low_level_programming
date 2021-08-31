@@ -26,7 +26,7 @@ int _abs(int n);
 int print_last_digit(int);
 
 /* 8-24_hours.c*/
-void jack_baue(void);
+void jack_bauer(void);
 
 /* 9- timestable.c*/
 void times_table(void);
