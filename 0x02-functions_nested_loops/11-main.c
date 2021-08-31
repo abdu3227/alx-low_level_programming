@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - check the code for ALX School students
+ * main - check the code for ALX School students.
  *
  * Return: Always 0
  */
