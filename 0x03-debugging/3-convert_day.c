@@ -1,9 +1,9 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * convert_day - converts day of month to day of year, without accounting
+ * convert_day - convert day of a month to day of year, without accouting
  * for leap year
- * @month: month in number format
+ * @month: month in number
  * @day: day of month
  * Return: day of year
  */
