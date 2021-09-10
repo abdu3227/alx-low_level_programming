@@ -24,7 +24,7 @@ int _strlen(char *str)
  * @n: integer
  * Return: dest
  */
-void *_strncat(char *src, char *dest, int n)
+void *_strncat(char *dest, char *src, int n)
 {
 	char *cat = dest + _strlen(dest);
 	int len;
