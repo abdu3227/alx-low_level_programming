@@ -9,6 +9,8 @@ int _putchar(char c);
 void _print_rev_recursion(char *s);
 /* _strlen_recursion */
 int _strlen_recursion(char *s);
+/* factorial */
+int factorial(int n);
 
 
 #endif
