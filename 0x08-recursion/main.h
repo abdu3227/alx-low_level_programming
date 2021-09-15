@@ -15,6 +15,8 @@ int factorial(int n);
 int _pow_recursion(int x, int y);
 /* sprt_recursion */
 int _sqrt_recursion(int n);
+/* is_prime_number */
+int is_prime_number(int n);
 
 
 
