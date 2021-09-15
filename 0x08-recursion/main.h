@@ -7,6 +7,8 @@ void _puts_recursion(char *s);
 int _putchar(char c);
 /* print_rev_recursion */
 void _print_rev_recursion(char *s);
+/* _strlen_recursion */
+int _strlen_recursion(char *s);
 
 
 #endif
