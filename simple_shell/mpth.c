@@ -1,14 +1,13 @@
 #include "shell.h"
 
 /**
- * _path - search its path os a command
+ * mpth - search its path os a command
  * @param: command to search.
  * @env: environment variable
  * Return: nothing.
- * Authors - Carlos Garcia - Ivan Dario Lasso - Cohort 10 - Cali
  */
 
-int _path(char **param, char **env)
+int mpth(char **param, char **env)
 {
 	struct stat st;
 	char *path1 = malloc(512);
@@ -18,16 +17,16 @@ int _path(char **param, char **env)
 	int indNIL = 0;
 	int i = 0;
 
-	PATH = getEnv("PATH", env);
-	PathParsed = split_line(PATH);
-	Directories = split_line(PathParsed[0]);
+	PATH = GetEnv("PATH", env);
+	PathParsed = Parscmd(PATH, "=");
+	Directories = Parscmd(PathParsed[0], ":");
 
 	for (i = 0; Directories[i] != NULL; i++)
 	{
 		_strcpy(path1, Directories[i]);
 		_strcat(path1, "/");
 		_strcat(path1, param[0]);
-		split_line(path1);
+		rmspaces(path1);
 
 		if (stat(path1, &st) == 0)
 		{

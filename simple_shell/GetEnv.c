@@ -1,12 +1,11 @@
 #include "shell.h"
 /**
- * getEnv - obtain value of a enviroment var
+ * GetEnv - obtain value of a enviroment var
  * @var: name of enviroment var
  * @env: enviroment
  * Return: value of enviroment var
- * Authors - Carlos Garcia - Ivan Dario Lasso - Cohort 10 - Cali
- **/
-char *getEnv(char *var, char **env)
+ */
+char *GetEnv(char *var, char **env)
 {
 
 	char **enviroment;

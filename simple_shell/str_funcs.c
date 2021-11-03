@@ -1,90 +1,113 @@
 #include "shell.h"
-
 /**
- * _strcpy - copies the string pointed to by src,
- * @dest: destnation poiter to take value
- * @src: array poited that gets copied
- * Description: copies string pointed to by src,
- * Return: dest
+ *_strlen - return the length of a string
+ *@s: character
+ *Return: length os string
  */
-char *_strcpy(char *dest, char *src)
+int _strlen(char *s)
 {
 	int i;
 
-	for (i = 0; src[i] != '\0'; i++)
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		;
+	}
+	return (i);
 }
 
 /**
- *_strchr - locates a character in a string
- *@s: string
- *@c: string
- *Return: a pointer to the first occurrence of character c in the string s
- *or NULL if character is not found
+ *_strncmp - return the length of a string
+ *@s1: string 1 to comparate
+ *@s2: string 2 to comparate
+ *@n: number of characters to comparate
+ *Return: 0 is success o -1 is fail
  */
-char *_strchr(char *s, char c)
-{
-	int count;
 
-	for (count = 0; s[count] != '\0'; count++)
-	{
-		if (s[count] == c)
-			return (s + count);
-	}
-	if (s[count] == c)
-		return (s + count);
+int _strncmp(char *s1, char *s2, int n)
+{
+
+	int i = 0;
+
+	do {
+		if (s1[i] != s2[i])
+			return (-1);
+
+		i++;
+
+	} while (i != n);
+
 	return (0);
 }
+/**
+ * _strcmp   - function that concatenate n chars of src to dest
+ * @s1	 : string dest
+ * @s2   : string origin
+ * Return:  integer
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i = 0;
+
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+
+		}
+	i++;
+
+	}
+
+	return (0); /* if alls char are equals */
+}
 
 /**
- *_strcat - concatenates two strings
- *@dest: Destination of the new string
- *@src: Source of the string
- *Return: Return dest
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-char *_strcat(char *dest, char *src)
+int _putchar(char c)
 {
-	int i = 0, j;
+	return (write(1, &c, 1));
+}
 
-	while (*(dest + i))
+
+/**
+ * _puts     -  print a string
+ * @str : pointer to char
+ * Return:  void
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+void _puts(char *str)
+{
+	int i = 0;
+
+	while (*(str + i) != '\0')
 	{
+		_putchar(*(str + i));
 		i++;
+
+
 	}
-	for (j = 0; *(src + j); j++, i++)
-	{
-		*(dest + i) = *(src + j);
-	}
-	*(dest + i) = '\0';
-	return (dest);
+		_putchar('\n');
+
 }
 
-/**
- * _strdup -  returns a pointer to a newly allocated space in memory
- * which contains a copy of the string given as a parameter
- * @str: string
- * Return: Pointer to the duplicate, NULL if it fails
- */
-char *_strdup(char *str)
-{
-	int con1, lon, con2;
-	char *fundup;
 
-	if (str == 0)
-		return (NULL);
 
-	for (con1 = 0; str[con1] != '\0'; con1++)
-		;
-	lon = con1;
 
-	fundup = malloc(sizeof(char) * lon + 1);
-	if (fundup == 0)
-		return (NULL);
 
-	for (con2 = 0; con2 < lon; con2++)
-		fundup[con2] = str[con2];
-	fundup[lon] = str[lon];
 
-	return (fundup);
-}
+
+
+
+
+
+
+
+
+

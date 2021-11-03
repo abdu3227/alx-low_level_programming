@@ -1,45 +1,47 @@
 #ifndef SHELL_H
 #define SHELL_H
-
+/**
+ * Header File - shell.h
+ * CISHELL  the Command Interprator Shell
+ */
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <errno.h>
 #include <sys/stat.h>
-#include <readline/readline.h>
-#include <readline/history.h>
 #include <limits.h>
-
-#define TOK_DELIM " \t\r\n"
-#define RED "\033[0;31m"
-#define RESET "\e[0m"
-#define MAXCOM 1000 /* max number of letters to be supported */
-#define MAXLIST 100 /* max number of commands to be supported */
-#define TK_BUFF_SIZE 1024
-/* Clearing the shell using escape sequences */
-#define clear() printf("\033[H\033[J")
-/* Greeting shell during startup */
-
-char *read_line();
-char **split_line(char *);
-int dash_exit(char **command, int status);
-int dash_execute(char **args);
-void printDir(void);
-void init_shell(void);
-int takeInput(char *str);
+#define CHANGE_DIR 1
+#define EXIT_SHELL 2
+#define PERM_DENIED "Permission denied"
+#define NOT_FOUND "not found"
+int _atoi(char *s);
+void rmspaces(char *str);
+void reverse(char *str, int len);
+int intToStr(int x, char str[]);
+void _puts(char *str);
+void errors(char *program, char *param, char *message, int Qexe);
+void Dash_execute(char **env, char **argv);
+char **Parscmd(char *command, char *separator);
+void _prompt(void);
+int cmdexec(char **param, char **env);
+void printEnv(char **env);
+int Builtin(char *command, char **env, int status);
+char *GetEnv(char *var, char **env);
+int mpth(char **param, char **env);
+void execute(char *command, char **env);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 char *_strchr(char *s, char c);
 int _strcmp(char *s1, char *s2);
+int _Wait(char **argv, char *command, int QExecutes);
+int Dash_exit(char *command, int status);
 int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int n);
-void _puts(char *str);
 int _putchar(char c);
-int _path(char **args, char **env);
-char *getEnv(char *var, char **env);
-void printEnv(char **env);
-int _atoi(char *s);
-#endif /* SHELL_H */
+void init_shell(void);
+#endif
+
